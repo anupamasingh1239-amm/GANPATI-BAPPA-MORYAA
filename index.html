@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ganpati Bappa Morya 🌸</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SOFT BACKGROUND DECORATIONS -->
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <div class="flower flower-one">✿</div>
+    <div class="flower flower-two">✿</div>
+    <div class="flower flower-three">✿</div>
+    <div class="flower flower-four">✿</div>
+
+    <!-- BOOK -->
+    <main class="book">
+
+        <!-- PAGE 1 -->
+        <section class="page active" id="page1">
+
+            <div class="page-content cover">
+
+                <p class="sanskrit">॥ श्री गणेशाय नमः ॥</p>
+
+                <h1>Ganpati Bappa<br>Morya!</h1>
+
+                <!-- GANPATI ON FRONT PAGE -->
+                <div class="cover-bappa">
+                    <div class="bappa-halo"></div>
+                    <img src="Ganpati.jpg" alt="Ganpati Bappa">
+                </div>
+
+                <!-- DIYA -->
+                <div class="diya">
+                    <div class="flame"></div>
+                    <div class="diya-bowl"></div>
+                </div>
+
+                <p class="small-text">
+                    A little invitation<br>
+                    from our home to yours
+                </p>
+
+                <button class="open-button" onclick="nextPage()">
+                    Tap to Open ✨
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 2 -->
+        <section class="page" id="page2">
+
+            <div class="page-content invitation">
+
+                <p class="small-heading">A joyful invitation</p>
+
+                <h2>Bappa is Coming Home!</h2>
+
+                <!-- SMALL GANPATI ON SECOND PAGE -->
+                <div class="small-bappa">
+                    <div class="tiny-halo"></div>
+                    <img src="Ganpati.jpg" alt="Ganpati Bappa">
+                </div>
+
+                <div class="divider">❀</div>
+
+                <p class="invitation-text">
+                    With hearts filled with devotion, happiness,
+                    and love, we invite you and your family to
+                    celebrate the divine arrival of
+                    <strong>Shri Ganpati Bappa</strong>
+                    at our home.
+                </p>
+
+                <p class="invitation-text second">
+                    Come share the blessings, smiles, prayers,
+                    flowers and the sweetness of modaks with us.
+                </p>
+
+                <p class="highlight">
+                    Your presence will make our celebration
+                    even more special. ♡
+                </p>
+
+                <div class="little-flowers">
+                    ✿ &nbsp; ❀ &nbsp; ✿
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 3 -->
+        <section class="page" id="page3">
+
+            <div class="page-content bappa-page">
+
+                <p class="small-heading">A divine little presence</p>
+
+                <h2>Meet Our Bappa</h2>
+
+                <div class="big-bappa">
+                    <div class="big-halo"></div>
+                    <img src="Ganpati.jpg" alt="Ganpati Bappa">
+                </div>
+
+                <p class="bappa-message">
+                    May His presence fill our home with
+                    happiness, peace and endless blessings.
+                </p>
+
+                <div class="actions">
+
+                    <button onclick="lightDiya(this)">
+                        🪔 Light the Diya
+                    </button>
+
+                    <button onclick="flowerShower()">
+                        🌸 Offer Flowers
+                    </button>
+
+                    <button onclick="showMushak()">
+                        🐭 Meet Mushak
+                    </button>
+
+                </div>
+
+                <div id="flower-container"></div>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 4 -->
+        <!-- MODAK + CELEBRATION MERGED -->
+        <section class="page" id="page4">
+
+            <div class="page-content celebration-page">
+
+                <p class="small-heading">A little sweetness for Bappa</p>
+
+                <h2>Modak Time! 🤍</h2>
+
+                <!-- REAL MODAK PICTURE -->
+                <div class="modak-container" onclick="offerModak(this)">
+
+                    <div class="modak-glow"></div>
+
+                    <img src="modak.jpg"
+                         alt="Beautiful Modak"
+                         class="modak-image">
+
+                </div>
+
+                <p class="modak-text">
+                    A little sweetness made with love,
+                    especially for Bappa.
+                </p>
+
+                <button class="modak-button" onclick="offerModak(this)">
+                    Offer Modak to Bappa ♡
+                </button>
+
+
+                <!-- MUSHak -->
+                <div class="mushak-area">
+
+                    <p class="mushak-title">
+                        And here comes our little Mushak! 🐭
+                    </p>
+
+                    <img src="mushak.jpg"
+                         alt="Mushak Raj"
+                         class="mushak-image"
+                         id="mushak">
+
+                </div>
+
+
+                <!-- DIYAS -->
+                <div class="celebration-diyas">
+                    <div class="mini-diya">
+                        <div class="mini-flame"></div>
+                    </div>
+
+                    <div class="mini-diya">
+                        <div class="mini-flame"></div>
+                    </div>
+
+                    <div class="mini-diya">
+                        <div class="mini-flame"></div>
+                    </div>
+                </div>
+
+
+                <h3>Now Let's Celebrate! ✨</h3>
+
+                <div class="celebration-buttons">
+
+                    <button onclick="ringBell(this)">
+                        🔔 Ring the Bell
+                    </button>
+
+                    <button onclick="celebrate()">
+                        🎉 Celebrate!
+                    </button>
+
+                </div>
+
+                <div id="celebration-container"></div>
+
+            </div>
+        </section>
+
+
+        <!-- PAGE 5 -->
+        <section class="page" id="page5">
+
+            <div class="page-content blessing">
+
+                <p class="small-heading">With love & devotion</p>
+
+                <h2>May Bappa Bless You</h2>
+
+                <div class="blessing-bappa">
+                    <div class="blessing-halo"></div>
+                    <img src="Ganpati.jpg" alt="Ganpati Bappa">
+                </div>
+
+                <div class="divider">❀</div>
+
+                <p class="blessing-text">
+                    May Bappa bless you and your family
+                    with happiness, good health, peace,
+                    prosperity and beautiful beginnings.
+                </p>
+
+                <p class="sanskrit-blessing">
+                    वक्रतुण्ड महाकाय<br>
+                    सूर्यकोटि समप्रभः<br>
+                    निर्विघ्नं कुरु मे देव<br>
+                    शुभकार्येषु सर्वदा ॥
+                </p>
+
+                <h3 class="final-morya">
+                    Ganpati Bappa Morya! 🙏
+                </h3>
+
+                <button class="restart-button" onclick="goHome()">
+                    ↻ Start Again
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- NAVIGATION -->
+        <button class="nav-button previous" onclick="previousPage()">
+            ‹
+        </button>
+
+        <button class="nav-button next" onclick="nextPage()">
+            ›
+        </button>
+
+        <!-- PAGE DOTS -->
+        <div class="page-dots">
+
+            <span class="dot active-dot" onclick="showPage(1)"></span>
+            <span class="dot" onclick="showPage(2)"></span>
+            <span class="dot" onclick="showPage(3)"></span>
+            <span class="dot" onclick="showPage(4)"></span>
+            <span class="dot" onclick="showPage(5)"></span>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

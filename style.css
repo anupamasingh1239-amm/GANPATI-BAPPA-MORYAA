@@ -1,0 +1,1056 @@
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 220, 205, 0.65), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(246, 215, 180, 0.55), transparent 35%),
+        linear-gradient(135deg, #fff8ef, #fce9e3, #fff4df);
+
+    color: #684c43;
+}
+
+
+/* ================================
+   BACKGROUND GLOW
+================================ */
+
+.glow {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.glow-one {
+    width: 220px;
+    height: 220px;
+    background: rgba(255, 204, 170, 0.35);
+    top: 5%;
+    left: 5%;
+}
+
+.glow-two {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 222, 165, 0.3);
+    right: 5%;
+    bottom: 5%;
+}
+
+
+/* ================================
+   FLOWERS
+================================ */
+
+.flower {
+    position: fixed;
+    font-size: 25px;
+    color: #d9a47d;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: floatFlower 6s ease-in-out infinite;
+}
+
+.flower-one {
+    top: 10%;
+    left: 8%;
+}
+
+.flower-two {
+    top: 75%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.flower-three {
+    top: 15%;
+    right: 7%;
+    animation-delay: 2s;
+}
+
+.flower-four {
+    bottom: 10%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+@keyframes floatFlower {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+
+/* ================================
+   BOOK
+================================ */
+
+.book {
+    position: relative;
+
+    width: min(92vw, 850px);
+    height: min(88vh, 720px);
+
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: rgba(255, 250, 242, 0.78);
+
+    border: 2px solid rgba(194, 151, 94, 0.55);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 30px 80px rgba(110, 76, 53, 0.18),
+        inset 0 0 40px rgba(255, 255, 255, 0.5);
+
+    overflow: hidden;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* ================================
+   PAGES
+================================ */
+
+.page {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 55px 75px 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: rotateY(-15deg) scale(0.96);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.65s ease;
+}
+
+.page.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: rotateY(0deg) scale(1);
+}
+
+.page-content {
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+}
+
+
+/* ================================
+   TYPOGRAPHY
+================================ */
+
+.sanskrit {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    color: #9a6b4b;
+    margin-bottom: 8px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+h1 {
+    font-size: clamp(48px, 8vw, 76px);
+    line-height: 0.95;
+    color: #8d573e;
+}
+
+h2 {
+    font-size: clamp(38px, 6vw, 56px);
+    color: #8d573e;
+    margin-bottom: 12px;
+}
+
+h3 {
+    color: #9b674a;
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.small-heading {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: #b98b70;
+    margin-bottom: 7px;
+}
+
+.small-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #96766a;
+}
+
+
+/* ================================
+   GANPATI — FRONT PAGE
+================================ */
+
+.cover-bappa {
+    position: relative;
+
+    width: 210px;
+    height: 210px;
+
+    margin: 8px auto 2px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover-bappa img {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 12px 18px rgba(120, 75, 45, 0.18));
+}
+
+.bappa-halo {
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 220, 155, 0.6),
+        rgba(255, 230, 190, 0.05)
+    );
+
+    box-shadow: 0 0 35px rgba(223, 170, 91, 0.25);
+}
+
+
+/* ================================
+   DIYA
+================================ */
+
+.diya {
+    width: 55px;
+    height: 50px;
+    margin: 0 auto 10px;
+
+    position: relative;
+}
+
+.diya-bowl {
+    position: absolute;
+
+    width: 52px;
+    height: 22px;
+
+    bottom: 0;
+    left: 1px;
+
+    background: linear-gradient(#d79b61, #a9683e);
+
+    border-radius: 0 0 50px 50px;
+}
+
+.flame {
+    position: absolute;
+
+    width: 17px;
+    height: 27px;
+
+    left: 18px;
+    top: 0;
+
+    background: #ffc75b;
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(45deg);
+
+    box-shadow: 0 0 20px rgba(255, 180, 65, 0.7);
+
+    animation: flame 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes flame {
+    from {
+        transform: rotate(40deg) scale(0.9);
+    }
+
+    to {
+        transform: rotate(50deg) scale(1.05);
+    }
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+button {
+    font-family: "Poppins", sans-serif;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+.open-button {
+    margin-top: 14px;
+
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #c99562, #e2b985);
+
+    color: white;
+
+    font-size: 13px;
+
+    box-shadow: 0 8px 20px rgba(161, 113, 70, 0.2);
+}
+
+
+/* ================================
+   PAGE 2
+================================ */
+
+.invitation-text {
+    max-width: 570px;
+
+    margin: 15px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 22px;
+
+    line-height: 1.45;
+
+    color: #76574c;
+}
+
+.invitation-text strong {
+    color: #a56d49;
+}
+
+.invitation-text.second {
+    font-size: 19px;
+}
+
+.highlight {
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #a16d56;
+
+    font-style: italic;
+}
+
+.divider {
+    color: #c38d65;
+    font-size: 25px;
+    margin: 5px 0 15px;
+}
+
+.little-flowers {
+    margin-top: 18px;
+    color: #c69a75;
+}
+
+
+/* SMALL BAPPA */
+
+.small-bappa {
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    margin: 5px auto 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-bappa img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 2;
+}
+
+.tiny-halo {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 219, 157, 0.4);
+
+    filter: blur(8px);
+}
+
+
+/* ================================
+   PAGE 3 — BIG BAPPA
+================================ */
+
+.big-bappa {
+    position: relative;
+
+    width: 300px;
+    height: 310px;
+
+    margin: 5px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-bappa img {
+    position: relative;
+
+    width: 290px;
+    height: 300px;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 15px 20px rgba(104, 66, 42, 0.18));
+}
+
+.big-halo {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 219, 150, 0.5),
+        transparent 70%
+    );
+
+    box-shadow: 0 0 50px rgba(226, 176, 91, 0.18);
+}
+
+.bappa-message {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 19px;
+
+    color: #806156;
+
+    margin: 0 auto 15px;
+
+    max-width: 500px;
+}
+
+.actions {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.actions button,
+.celebration-buttons button {
+    padding: 10px 16px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 242, 224, 0.9);
+
+    color: #91664e;
+
+    border: 1px solid rgba(188, 142, 100, 0.3);
+
+    font-size: 12px;
+
+    box-shadow: 0 5px 15px rgba(120, 80, 50, 0.08);
+}
+
+
+/* ================================
+   PAGE 4 — MODAK + CELEBRATION
+================================ */
+
+.celebration-page {
+    max-width: 620px;
+}
+
+.modak-container {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.modak-image {
+    position: relative;
+
+    width: 135px;
+    height: 135px;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 10px 12px rgba(120, 80, 40, 0.16));
+
+    transition: transform 0.35s ease;
+}
+
+.modak-container:hover .modak-image {
+    transform: translateY(-7px) scale(1.05);
+}
+
+.modak-glow {
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 215, 146, 0.28);
+
+    filter: blur(15px);
+}
+
+.modak-text {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    color: #806156;
+
+    max-width: 400px;
+
+    margin: 0 auto 8px;
+}
+
+.modak-button {
+    padding: 9px 18px;
+
+    border-radius: 25px;
+
+    background: #e0b77d;
+
+    color: white;
+
+    font-size: 11px;
+
+    box-shadow: 0 6px 15px rgba(150, 104, 55, 0.18);
+}
+
+
+/* MUSHak */
+
+.mushak-area {
+    margin-top: 8px;
+}
+
+.mushak-title {
+    font-size: 12px;
+
+    color: #a47b68;
+
+    margin-bottom: -4px;
+}
+
+.mushak-image {
+    width: 105px;
+    height: 105px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 8px 12px rgba(100, 70, 50, 0.15));
+
+    transition: transform 0.4s ease;
+}
+
+.mushak-image:hover {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+
+/* MINI DIYAS */
+
+.celebration-diyas {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    margin: -5px 0 2px;
+}
+
+.mini-diya {
+    position: relative;
+
+    width: 30px;
+    height: 18px;
+
+    background: #c28752;
+
+    border-radius: 0 0 30px 30px;
+}
+
+.mini-flame {
+    position: absolute;
+
+    width: 9px;
+    height: 15px;
+
+    left: 11px;
+    top: -11px;
+
+    background: #ffc55a;
+
+    border-radius: 70% 30% 70% 30%;
+
+    transform: rotate(45deg);
+
+    box-shadow: 0 0 12px rgba(255, 180, 60, 0.6);
+}
+
+.celebration-page h3 {
+    margin: 5px 0;
+
+    font-size: 25px;
+}
+
+.celebration-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   PAGE 5 — BLESSING
+================================ */
+
+.blessing-bappa {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    margin: 0 auto 5px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.blessing-bappa img {
+    position: relative;
+
+    width: 180px;
+    height: 180px;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    filter: drop-shadow(0 12px 18px rgba(100, 65, 40, 0.15));
+}
+
+.blessing-halo {
+    position: absolute;
+
+    width: 165px;
+    height: 165px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 221, 161, 0.35);
+
+    filter: blur(10px);
+}
+
+.blessing-text {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    line-height: 1.45;
+
+    max-width: 520px;
+
+    margin: 0 auto 15px;
+
+    color: #795b50;
+}
+
+.sanskrit-blessing {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    color: #9b6d51;
+
+    margin-bottom: 10px;
+}
+
+.final-morya {
+    font-size: 27px;
+
+    margin-top: 5px;
+}
+
+.restart-button {
+    margin-top: 8px;
+
+    padding: 9px 20px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 239, 218, 0.9);
+
+    border: 1px solid rgba(183, 135, 92, 0.3);
+
+    color: #95684f;
+
+    font-size: 11px;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+.nav-button {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 247, 235, 0.9);
+
+    color: #9d6c4e;
+
+    font-size: 30px;
+
+    border: 1px solid rgba(184, 137, 94, 0.3);
+
+    z-index: 20;
+
+    box-shadow: 0 6px 18px rgba(100, 70, 50, 0.08);
+}
+
+.nav-button:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.previous {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+
+/* ================================
+   PAGE DOTS
+================================ */
+
+.page-dots {
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 8px;
+
+    z-index: 30;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #ddc1aa;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.active-dot {
+    background: #b47d5c;
+
+    transform: scale(1.35);
+}
+
+
+/* ================================
+   FLOWER SHOWER
+================================ */
+
+.floating-petal {
+    position: fixed;
+
+    top: -30px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation: petalFall 3s linear forwards;
+
+    z-index: 100;
+}
+
+@keyframes petalFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   MODAK OFFER ANIMATION
+================================ */
+
+.offered {
+    animation: offerModak 0.8s ease forwards;
+}
+
+@keyframes offerModak {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15) translateY(-12px);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ================================
+   MUSHAK CELEBRATION
+================================ */
+
+.mushak-run {
+    animation: mushakRun 3.5s ease-in-out;
+}
+
+@keyframes mushakRun {
+
+    0% {
+        transform: translateX(-160px);
+    }
+
+    50% {
+        transform: translateX(160px) rotate(4deg);
+    }
+
+    100% {
+        transform: translateX(-160px);
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .book {
+        width: 94vw;
+        height: 91vh;
+        border-radius: 24px;
+    }
+
+    .page {
+        padding: 35px 38px 65px;
+    }
+
+    h1 {
+        font-size: 49px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .cover-bappa {
+        width: 175px;
+        height: 175px;
+    }
+
+    .cover-bappa img {
+        width: 165px;
+        height: 165px;
+    }
+
+    .big-bappa {
+        width: 230px;
+        height: 245px;
+    }
+
+    .big-bappa img {
+        width: 225px;
+        height: 235px;
+    }
+
+    .big-halo {
+        width: 210px;
+        height: 210px;
+    }
+
+    .invitation-text {
+        font-size: 19px;
+    }
+
+    .invitation-text.second {
+        font-size: 17px;
+    }
+
+    .blessing-text {
+        font-size: 18px;
+    }
+
+    .nav-button {
+        width: 35px;
+        height: 35px;
+        font-size: 25px;
+    }
+
+    .previous {
+        left: 8px;
+    }
+
+    .next {
+        right: 8px;
+    }
+
+    .mushak-image {
+        width: 85px;
+        height: 85px;
+    }
+
+    .modak-image {
+        width: 120px;
+        height: 120px;
+    }
+}
